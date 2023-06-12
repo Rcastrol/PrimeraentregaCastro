@@ -1,36 +1,39 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import NavbarBootstrap from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from './cartwidget';
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import CartWidget from "./CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
-    <NavbarBootstrap bg="light" expand="lg">
+    <Navbar bg="light" expand="lg">
       <Container>
-        <NavbarBootstrap.Brand href="#home">DELIFRESCA</NavbarBootstrap.Brand>
-        <NavbarBootstrap.Toggle aria-controls="basic-navbar-nav" />
-        <NavbarBootstrap.Collapse id="basic-navbar-nav">
+        <Navbar.Brand href="/">DELIFRESCA</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Productos</Nav.Link>
+            <Nav.Link href="#home">
+              <Link to="/">Home</Link>
+            </Nav.Link>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Frutas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Verduras
+              <NavDropdown.Item>
+                <Link to="/category/Frutas">Frutas</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Frutos Secos</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
-                Ofertas
+              <NavDropdown.Item>
+                <Link to="/category/Naranjas">Naranjas</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/category/Mango">Mango</Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-           <CartWidget />
-        </NavbarBootstrap.Collapse>
+          <CartWidget />
+        </Navbar.Collapse>
       </Container>
-    </NavbarBootstrap>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavBar;
