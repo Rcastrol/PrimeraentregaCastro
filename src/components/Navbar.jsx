@@ -19,13 +19,13 @@ const NavBar = () => {
             </Nav.Link>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <NavDropdown.Item>
-                <Link to="/category/Frutas">Frutas</Link>
+                <Link to="/category/groceries">Dry Rose</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to="/category/Naranjas">Naranjas</Link>
+                <Link to="/category/groceries">fauji</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to="/category/Mango">Mango</Link>
+                <Link to="/category/groceries">Baking Food Items</Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
